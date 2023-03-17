@@ -23,6 +23,7 @@ public class ManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void testSearchWhenFewProductsFound() {
         Repository repo = new Repository();
@@ -40,6 +41,7 @@ public class ManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void testSearchWhenAllProductsFound() {
         Repository repo = new Repository();
@@ -53,10 +55,11 @@ public class ManagerTest {
         manager.add(book3);
 
         Product[] actual = manager.searchBy("H");
-        Product[] expected = {book1,book2,book3};
+        Product[] expected = {book1, book2, book3};
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void testSearchWhenNoneProductsFound() {
         Repository repo = new Repository();
@@ -82,7 +85,7 @@ public class ManagerTest {
         Book book1 = new Book(1, "Hello", 120, "Helen");
         Book book2 = new Book(2, "Hey", 100, "Hix");
         Book book3 = new Book(3, "Hi", 80, "Hox");
-        Smartphone smartphone1 = new Smartphone(4,"Nokia 3100", 300, "Nokia");
+        Smartphone smartphone1 = new Smartphone(4, "Nokia 3100", 300, "Nokia");
 
         repo.add(book1);
         repo.add(book2);
@@ -93,7 +96,7 @@ public class ManagerTest {
         repo.removeById(1);
 
         Product[] actual = repo.findAll();
-        Product[] expected = {book2,smartphone1};
+        Product[] expected = {book2, smartphone1};
 
         Assertions.assertArrayEquals(expected, actual);
     }
